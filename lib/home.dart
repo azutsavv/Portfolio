@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
 class homepage extends StatefulWidget {
@@ -15,7 +16,20 @@ class _homepageState extends State<homepage> {
       extendBodyBehindAppBar: true,
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 0, 0, 0),
+        leading: PopupMenuButton(
+          color: Colors.black,
+          itemBuilder: (context) => [
+            PopupMenuItem(
+                child: TextButton(
+              child: Text('About Me'),
+              onPressed: () {
+                Navigator.pushNamed(context, 'about');
+              },
+            ))
+          ],
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
       ),
       body: SlidingSheet(
         elevation: 10,
@@ -38,49 +52,39 @@ class _homepageState extends State<homepage> {
               child: ShaderMask(
                 shaderCallback: (rect) {
                   return LinearGradient(
-                          begin: Alignment.center,
-                          end: Alignment.bottomCenter,
-                          colors: [Color.fromARGB(255, 0, 0, 0), Colors.transparent])
-                          .createShader(
-                            Rect.fromLTRB(0, 0, rect.width, rect.height));
-                            
-                       
-                       
+                      begin: Alignment.center,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color.fromARGB(255, 0, 0, 0),
+                        Colors.transparent
+                      ]).createShader(
+                      Rect.fromLTRB(0, 0, rect.width, rect.height));
                 },
                 blendMode: BlendMode.dstIn,
-                child: Image.asset('assets/final_222.png',
-                fit: BoxFit.contain,
+                child: Image.asset(
+                  'assets/final port.png',
+                  fit: BoxFit.contain,
                 ),
-                
               ),
             ),
             Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height*0.80
-              ),
-              child: 
-              Column(
-               
-                children: [
-
-                  
-                  Text("Utsav Singh ",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 23, 140, 167),
-                    fontSize: 35,
-                    fontWeight: FontWeight.w800
-                  )),
-                  Text("ANDROID DEVELOPER",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 23, 140, 167),
-                    fontSize: 25,
-                    fontWeight: FontWeight.w800
-                  ))
-                ],
-              )
-            )
-             
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.80),
+                child: Column(
+                  children: [
+                    Text("Utsav Singh ",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 23, 140, 167),
+                            fontSize: 35,
+                            fontWeight: FontWeight.w800)),
+                    Text("ANDROID DEVELOPER",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 23, 140, 167),
+                            fontSize: 25,
+                            fontWeight: FontWeight.w800))
+                  ],
+                ))
           ]),
         ),
         builder: (context, state) {
@@ -222,10 +226,102 @@ class _homepageState extends State<homepage> {
                               )),
                             ),
                           ),
-                          
                         ],
-
-                        
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: 105,
+                            height: 115,
+                            child: Card(
+                              color: Colors.blueGrey[900],
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Container(
+                                  child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Icon(
+                                    FontAwesomeIcons.squareGithub,
+                                    color: Colors.grey[350],
+                                  ),
+                                  SizedBox(
+                                    height: 25,
+                                  ),
+                                  Text(
+                                    "GITHUB",
+                                    style: TextStyle(
+                                        color: Colors.grey[350], fontSize: 16),
+                                  ),
+                                ],
+                              )),
+                            ),
+                          ),
+                          Container(
+                            width: 105,
+                            height: 115,
+                            child: Card(
+                              color: Colors.blueGrey[900],
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Container(
+                                  child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Icon(
+                                    FontAwesomeIcons.githubAlt,
+                                    color: Colors.white,
+                                  ),
+                                  SizedBox(
+                                    height: 25,
+                                  ),
+                                  Text(
+                                    "GIT",
+                                    style: TextStyle(
+                                        color: Colors.grey[350], fontSize: 16),
+                                  ),
+                                ],
+                              )),
+                            ),
+                          ),
+                          Container(
+                            width: 105,
+                            height: 115,
+                            child: Card(
+                              color: Colors.blueGrey[900],
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Container(
+                                  child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Icon(
+                                    FontAwesomeIcons.brain,
+                                    color: Colors.white,
+                                  ),
+                                  SizedBox(
+                                    height: 25,
+                                  ),
+                                  Text(
+                                    "DART",
+                                    style: TextStyle(
+                                        color: Colors.grey[350], fontSize: 12),
+                                  ),
+                                ],
+                              )),
+                            ),
+                          ),
+                        ],
                       )
                     ],
                   )

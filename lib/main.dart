@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/about.dart';
 import 'package:portfolio/home.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +15,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      
       theme: ThemeData(
       ),
-      home: homepage(),
+     initialRoute: 'home',
+
+     routes: {
+      'home':(context) => homepage(),
+      'about':(context) => Myabout(),
+     },
+      
     ); 
   }
 }

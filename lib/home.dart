@@ -38,54 +38,56 @@ class _homepageState extends State<homepage> {
           // Enable snapping. This is true by default.
           snap: true,
           // Set custom snapping points.
-          snappings: [0.05, 0.7, 1.0],
+          snappings: [0.09, 0.6, 0.6],
           // Define to what the snappings relate to. In this case,
           // the total available space that the sheet can expand to.
           positioning: SnapPositioning.relativeToAvailableSpace,
         ),
         // The body widget will be displayed under the SlidingSheet
         // and a parallax effect can be applied to it.
-        body: Container(
-          child: Stack(children: [
-            Container(
-              margin: EdgeInsets.only(top: 100),
-              child: ShaderMask(
-                shaderCallback: (rect) {
-                  return LinearGradient(
-                      begin: Alignment.center,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color.fromARGB(255, 0, 0, 0),
-                        Colors.transparent
-                      ]).createShader(
-                      Rect.fromLTRB(0, 0, rect.width, rect.height));
-                },
-                blendMode: BlendMode.dstIn,
-                child: Image.asset(
-                  'assets/final port.png',
-                  fit: BoxFit.contain,
+        body: SafeArea(
+          child: Container(
+            child: Stack(children: [
+              Container(
+                margin: EdgeInsets.only(top: 50),
+                child: ShaderMask(
+                  shaderCallback: (rect) {
+                    return LinearGradient(
+                        begin: Alignment.center,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color.fromARGB(255, 0, 0, 0),
+                          Colors.transparent
+                        ]).createShader(
+                        Rect.fromLTRB(0, 0, rect.width, rect.height));
+                  },
+                  blendMode: BlendMode.dstIn,
+                  child: Image.asset(
+                    'assets/final port.png',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
-            ),
-            Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.80),
-                child: Column(
-                  children: [
-                    Text("Utsav Singh ",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 23, 140, 167),
-                            fontSize: 35,
-                            fontWeight: FontWeight.w800)),
-                    Text("ANDROID DEVELOPER",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 23, 140, 167),
-                            fontSize: 25,
-                            fontWeight: FontWeight.w800))
-                  ],
-                ))
-          ]),
+              Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.6),
+                  child: Column(
+                    children: [
+                      Text("Utsav Singh ",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 23, 140, 167),
+                              fontSize: 35,
+                              fontWeight: FontWeight.w800)),
+                      Text("SOFTWARE DEVELOPER",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 23, 140, 167),
+                              fontSize: 25,
+                              fontWeight: FontWeight.w800))
+                    ],
+                  ))
+            ]),
+          ),
         ),
         builder: (context, state) {
           // This is the content of the sheet that will get
@@ -218,9 +220,9 @@ class _homepageState extends State<homepage> {
                                     height: 25,
                                   ),
                                   Text(
-                                    "Problem Solving",
+                                    "problem",
                                     style: TextStyle(
-                                        color: Colors.grey[350], fontSize: 12),
+                                        color: Colors.grey[350], fontSize: 16),
                                   ),
                                 ],
                               )),
@@ -315,7 +317,7 @@ class _homepageState extends State<homepage> {
                                   Text(
                                     "DART",
                                     style: TextStyle(
-                                        color: Colors.grey[350], fontSize: 12),
+                                        color: Colors.grey[350], fontSize: 16),
                                   ),
                                 ],
                               )),

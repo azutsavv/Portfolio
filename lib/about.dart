@@ -52,7 +52,7 @@ class _MyaboutState extends State<Myabout> {
                 EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.5),
             child: Column(children: [
               Text(
-                "Helo I'm",
+                "Hello I'm",
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w600,
@@ -66,7 +66,7 @@ class _MyaboutState extends State<Myabout> {
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 35,
                       fontWeight: FontWeight.w800)),
-              Text("ANDROID DEVELOPER",
+              Text("SOFTWARE DEVELOPER",
                   style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 25,
